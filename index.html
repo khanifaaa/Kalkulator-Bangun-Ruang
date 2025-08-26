@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="s  ha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  </head>
+  <body>
+    <!-- Background -->
+    <div class="bg-primary text-white bg-opacity-50 min-vh-100">
+      <!-- header -->
+      <div class="div px-3">
+      <h1 class="text-center animate__animated animate__backInDown">Kalkulator Bangun Ruang</h1>
+      <p class="text-center  animate__animated animate__backInDown">Hitung Volume,keliling dan luas permukaan dengan cepat
+      </p>
+      </div>
+      <!-- row -->
+      <div class="container animate__animated animate__fadeInDown">
+        <div class="row">
+          <!--Kubus-->
+          <div class="col">
+            <div class="card">
+              <div class="d-flex justify-content-center mt-5">
+                <img src="kubus.jpg" class="card-img-top" style="width: 50%" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Kubus</h5>
+                <div class="input-group input-group-sm mb-5">
+                  <input
+                    type="number"
+                    id="sisiKubus"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Sisi Kubus"
+                    aria-label="Masukkan Nilai Sisi Kubus"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <!-- Hasil -->
+                <div
+                  id="hasilKubus"
+                  class="card text-bg-primary mb-3"
+                  style="max-width: 18rem"
+                >
+                  <h5 class="card-header">Hasil</h5>
+                  <div class="card-body">
+                    <p class="card-text">Volume: <span id="volKubus"></span></p>
+                    <p class="card-text">Keliling:<span id="kelKubus"></span></p>
+                    <p class="card-text">Luas Permukaan: <span id="lpKubus"></span></p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary form-control"
+                  onclick="hitungKubus();"
+                >
+                  Hitung
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Bola -->
+          <div class="col">
+            <div class="card">
+              <div class="d-flex justify-content-center mt-5">
+                <img src="bolaa.jpg" class="card-img-top" style="width: 50%" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Bola</h5>
+                <div class="input-group input-group-sm mb-5">
+                  <input
+                    type="number"
+                    id="jariBola"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Jari-jari Bola"
+                    aria-label="Masukkan Nilai Jari-jari Bola"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <!-- Hasil -->
+                <div class="card text-bg-primary mb-3" style="max-width: 18rem">
+                  <h5 class="card-header">Hasil</h5>
+                  <div class="card-body">
+                  <p class="card-text">Volume: <span id="volBola"></span></p>
+                    <p class="card-text">Keliling:<span id="kelBola"></span></p>
+                    <p class="card-text">Luas Permukaan: <span id="lpBola"></span></p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary form-control"
+                  onclick="hitungBola();"
+                >
+                  Hitung
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Tabung -->
+          <div class="col">
+            <div class="card">
+              <div class="d-flex justify-content-center mt-5">
+                <img src="tabungg.jpg" class="card-img-top" style="width: 50%" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Tabung</h5>
+                <div class="input-group input-group-sm mb-2">
+                  <input
+                    type="number"
+                    id="jariTabung"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Jari-jari Tabung"
+                    aria-label="Masukkan Nilai Jari-jari Tabung"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                  <input
+                    type="number"
+                    id="tinggiTabung"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Tinggi Tabung"
+                    aria-label="Masukkan Nilai Tinggi Tabung"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <!-- Hasil -->
+                <div class="card text-bg-primary mb-3" style="max-width: 18rem">
+                  <h5 class="card-header">Hasil</h5>
+                  <div class="card-body">
+                    <p class="card-text">Volume: <span id="volTabung"></span></p>
+                    <p class="card-text">Keliling:<span id="kelTabung"></span></p>
+                    <p class="card-text">Luas Permukaan: <span id="lpTabung"></span></p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary form-control"
+                  onclick="hitungTabung();"
+                >
+                  Hitung
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="col">
+            <div class="card">
+              <div class="d-flex justify-content-center mt-5">
+                <img src="limas.jpg" class="card-img-top" style="width: 50%" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title text-center">Limas</h5>
+                <div class="input-group input-group-sm mb-2">
+                  <input
+                    type="number"
+                    id="sisiLimas"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Sisi Limas"
+                    aria-label="Masukkan Nilai Sisi Limas"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <div class="input-group input-group-sm mb-2">
+                  <input
+                    type="number"
+                    id="tinggiLimas"
+                    class="form-control"
+                    placeholder="Masukkan Nilai Tinggi Limas"
+                    aria-label="Masukkan Nilai Tinggi Limas"
+                    aria-describedby="button-addon2"
+                  />
+                </div>
+                <!-- Hasil -->
+                <div class="card text-bg-primary mb-3" style="max-width: 18rem">
+                  <h5 class="card-header">Hasil</h5>
+                  <div class="card-body">
+                   <p class="card-text">Volume: <span id="volLimas"></span></p>
+                    <p class="card-text">Keliling:<span id="kelLimas"></span></p>
+                    <p class="card-text">Luas Permukaan: <span id="lpLimas"></span></p>
+                  </div>
+                </div>
+                <button
+                  class="btn btn-primary form-control"
+                  onclick="hitungLimas();"
+                >
+                  Hitung
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function hitungKubus() {
+        let s = parseFloat($("#sisiKubus").val());
+        if (isNaN(s) || s <= 0) {
+          $("#hasilKubus").html("Input tidak valid!");
+          return;
+        }
+        let volume = Math.pow(s, 3);
+        let keliling = 12 * s;
+        let luas = 6 * Math.pow(s, 2);
+
+        $("#volKubus").html(volume.toFixed(1) + " cm³");
+        $("#kelKubus").html(keliling.toFixed(1) + " cm");
+        $("#lpKubus").html(luas.toFixed(1) + " cm²");
+      }
+
+      function hitungTabung() {
+        let r = parseFloat($("#jariTabung").val());
+        let t = parseFloat($("#tinggiTabung").val());
+        if (isNaN(r) || isNaN(t) || r <= 0 || t <= 0) {
+          $("#hasilTabung").html("Input tidak valid!");
+          return;
+        }
+        let volume = Math.PI * Math.pow(r, 2) * t;
+        let keliling = 2 * Math.PI * r;
+        let luas = 2 * Math.PI * r * (r + t);
+
+          $("#volTabung").html(volume.toFixed(1) + " cm³");
+        $("#kelTabung").html(keliling.toFixed(1) + " cm");
+        $("#lpTabung").html(luas.toFixed(1) + " cm²");
+      }
+
+      function hitungBola() {
+        let r = parseFloat($("#jariBola").val());
+        if (isNaN(r) || r <= 0) {
+          $("#hasilBola").html("Input tidak valid!");
+          return;
+        }
+        let volume = (4 / 3) * Math.PI * Math.pow(r, 3);
+        let keliling = 2 * Math.PI * r;
+        let luas = 4 * Math.PI * Math.pow(r, 2);
+         $("#volBola").html(volume.toFixed(1) + " cm³");
+        $("#kelBola").html(keliling.toFixed(1)+ " cm");
+        $("#lpBola").html(luas.toFixed(1) + " cm²");
+      }
+
+      function hitungLimas() {
+        let s = parseFloat($("#sisiLimas").val());
+        let t = parseFloat($("#tinggiLimas").val());
+        if (isNaN(s) || isNaN(t) || s <= 0 || t <= 0) {
+          $("#hasilLimas").html("Input tidak valid!");
+          return;
+        }
+        let volume = (1 / 3) * Math.pow(s, 2) * t;
+        let keliling = 4 * s;
+        let tinggiSegitiga = Math.sqrt(Math.pow(t, 2) + Math.pow(s / 2, 2));
+        let luas = Math.pow(s, 2) + 2 * s * tinggiSegitiga;
+         $("#volLimas").html(volume.toFixed(1) + " cm³");
+        $("#kelLimas").html(keliling.toFixed(1) + " cm");
+        $("#lpLimas").html(luas.toFixed(1) + " cm²");
+      }
+    </script>
+  </body>
+</html>
